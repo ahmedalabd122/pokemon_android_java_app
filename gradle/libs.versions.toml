@@ -1,0 +1,64 @@
+[versions]
+agp = "8.8.1"
+cardview = "1.0.0"
+compiler = "4.11.0"
+converterGson = "2.9.0"
+glide = "4.11.0"
+hiltAndroid = "2.28-alpha"
+hiltAndroidCompiler = "2.28-alpha"
+hiltLifecycleViewmodel = "1.0.0-alpha01"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+lifecycleLivedata = "2.2.0"
+lifecycleViewmodel = "2.8.7"
+material = "1.10.0"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+materialVersion = "1.1.0"
+multidex = "1.0.3"
+navigationFragment = "2.3.0-beta01"
+recyclerview = "1.4.0"
+retrofit = "2.9.0"
+roomRuntime = "2.2.5"
+roomRxjava2 = "2.2.5"
+rxandroid = "3.0.0"
+rxjava = "3.0.0"
+rxjava3RetrofitAdapter = "3.0.0"
+sdpAndroid = "1.0.6"
+
+[libraries]
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationFragment" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationFragment" }
+androidx-room-rxjava2 = { module = "androidx.room:room-rxjava2", version.ref = "roomRxjava2" }
+cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltLifecycleViewmodel" }
+hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "hiltLifecycleViewmodel" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "lifecycleLivedata" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewmodel" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material-v110 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+multidex = { module = "com.android.support:multidex", version.ref = "multidex" }
+recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxandroid" }
+rxjava3-retrofit-adapter = { module = "com.github.akarnokd:rxjava3-retrofit-adapter", version.ref = "rxjava3RetrofitAdapter" }
+rxjava3-rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
+sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
