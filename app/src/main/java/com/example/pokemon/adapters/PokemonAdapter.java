@@ -50,6 +50,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
         return pokemonList.size();
     }
 
+    public Pokemon getPokemonAt(int position){
+        return  pokemonList.get(position);
+    }
+
     public class PokemonViewHolder extends RecyclerView.ViewHolder {
         private  ImageView pokemonImageView;
         private  TextView pokemonTextView;

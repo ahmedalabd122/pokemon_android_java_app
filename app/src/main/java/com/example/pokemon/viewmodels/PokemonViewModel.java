@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.hilt.lifecycle.ViewModelInject;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -14,6 +15,7 @@ import com.example.pokemon.repository.Repository;
 
 import java.io.Closeable;
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.functions.Function;
@@ -26,12 +28,17 @@ public class PokemonViewModel extends ViewModel {
         return pokemonList;
     }
 
+    public LiveData<List<Pokemon>> getFavPokemonsList() {
+        return pokemonsFavList;
+    }
+
     @ViewModelInject
     public PokemonViewModel(Repository repository) {
         this.repository = repository;
     }
 
-    MutableLiveData<ArrayList<Pokemon>> pokemonList = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<Pokemon>> pokemonList = new MutableLiveData<>();
+    private LiveData<List<Pokemon>> pokemonsFavList = null;
 
     @SuppressLint("CheckResult")
     public void getPokemons() {
@@ -46,7 +53,7 @@ public class PokemonViewModel extends ViewModel {
                             String index = url.split("https://pokeapi.co/api/v2/pokemon/")[1];
                             index = index.split("/")[0];
                             pokemon.setUrl(
-                                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+index+".png");
+                                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + index + ".png");
                         }
                         return list;
                     }
@@ -56,4 +63,15 @@ public class PokemonViewModel extends ViewModel {
                         error -> Log.e("ViewModel", error.getMessage()));
     }
 
+    public void addPokemonToFav(Pokemon pokemon) {
+        repository.addPokemonToFav(pokemon);
+    }
+
+    public void deletePokemonFormFav(int pokemonId) {
+        repository.deletePokemonFromFav(pokemonId);
+    }
+
+    public void getFavPokemons() {
+        pokemonsFavList = repository.getFavPokemons();
+    }
 }

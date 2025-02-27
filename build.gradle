@@ -2,5 +2,13 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     id 'com.google.dagger.hilt.android' version '2.51.1' apply false
+
 }
 
+allprojects {
+    configurations.all {
+        resolutionStrategy {
+            force("org.xerial:sqlite-jdbc:3.34.0") // Or a compatible version
+        }
+    }
+}
